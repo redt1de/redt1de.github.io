@@ -88,7 +88,8 @@ func (u UNICODE_STRING) String() string {
 
 ### Hexdump a pointer to anything
 ```go
-// HexDump prints a hex dump of the memory at the given pointer. Although type is interface{}, it must be passed a pointer to the object. HexDump(&someVar)
+// HexDump prints a hex dump of the memory at the given pointer. 
+// Although type is interface{}, it must be passed a pointer to the object. HexDump(&someVar)
 func HexDump(a interface{}) {
 	val := reflect.ValueOf(a)
 	if val.Kind() == reflect.Ptr {
