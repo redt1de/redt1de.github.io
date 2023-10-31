@@ -91,10 +91,12 @@ baseurl: ""
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
+  # parse_block_html: true
   syntax_highlighter: rouge
+  # highlighter: pygments
   syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: highlight
-    # default_lang: console
+    default_lang: console
     span:
       line_numbers: false
     block:
@@ -105,8 +107,19 @@ collections:
   tabs:
     output: true
     sort_by: order
+  notes:
+    output: true
 
 defaults:
+  - scope:
+      path: "" # An empty string here means all files in the project
+      type: notes
+    values:
+      layout: note
+      comments: false
+      toc: true 
+      permalink: /notes/:title/
+      
   - scope:
       path: "" # An empty string here means all files in the project
       type: posts
@@ -117,6 +130,7 @@ defaults:
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /posts/:title/
+      
   - scope:
       path: _drafts
     values:
@@ -127,6 +141,7 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+
   - scope:
       path: assets/img/favicons
     values:
